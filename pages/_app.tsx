@@ -1,14 +1,14 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 import "@fontsource/rubik";
+import { Background } from "../Components/background/background";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Credit Card</title>
+        <title>IP Tracker</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -28,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         withGlobalStyles
         withNormalizeCSS
       >
-        <Component {...pageProps} />
+        <Background>
+          <Component {...pageProps} />
+        </Background>
       </MantineProvider>
     </>
   );
