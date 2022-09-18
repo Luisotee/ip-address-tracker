@@ -6,14 +6,13 @@ interface IBackgroundProps {
 
 export const BackgroundStyle = styled.div<IBackgroundProps>`
   width: 100%;
-  height: 30vh;
+  height: 280px;
   background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (max-width: 1080px) {
-    width: 100%;
-    height: 240px;
+    height: 360px;
   }
 `;
 
