@@ -22,3 +22,9 @@ export const MobileGridResult = styled(Stack)`
   border @media (max-width: 1080px) {
   }
 `;
+
+export const StackBorder = styled(Stack)`
+  border-left: 1px solid #eee;
+  border @media (max-width: 1080px) {
+  }
+`;
