@@ -17,7 +17,7 @@ export const MobileGridResult = styled(Stack)`
   background-color: white;
   border-radius: 15px;
   width: 351px;
-  height: 392px;
+  height: 320px;
   z-index: 2;
   border @media (max-width: 1080px) {
   }
