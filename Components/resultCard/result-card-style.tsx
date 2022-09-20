@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { SimpleGrid, Stack } from "@mantine/core";
 
 export const DesktopGridResult = styled(SimpleGrid)`
-  border-style: solid;
   background-color: white;
   border-radius: 15px;
   width: 1110px;
