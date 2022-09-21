@@ -1,5 +1,11 @@
-import ipify from "ipify";
+import axios from "axios";
 
 export async function ipTracker() {
-  console.log(await ipify({ useIPv6: false }));
+  const ip = "177.84.241.63";
+  const ipAdressApi = axios.create({
+    baseURL:
+      "https://geo.ipify.org/api/v1?apiKey=at_Yxxqxxi7C1mlbPE0ES2cMk9ceDDIt&ipAddress=",
+  });
+  const data = await ipAdressApi.get(`&ipAddress=${ip}`);
+  console.log(data);
 }

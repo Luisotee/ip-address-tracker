@@ -10,7 +10,7 @@ const LiveMap = dynamic(() => import("../Components/mapAPI/map-api"), {
 });
 
 const Home: NextPage = () => {
-  const isMobile = useMediaQuery("(min-width: 1080px)");
+  const isMobile = useMediaQuery("(min-width: 1110px)");
 
   return (
     <Stack align="center" style={{ height: "100vh" }}>

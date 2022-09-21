@@ -5,7 +5,7 @@ import { MapDivContainer } from "./map-style";
 import { ipTracker } from "../ipAPI/ipTracker";
 
 export default function LiveMap() {
-  //ipTracker();
+  ipTracker();
   const customMarker = icon({
     iconUrl: "icon-location.svg",
     iconSize: [46, 56],
