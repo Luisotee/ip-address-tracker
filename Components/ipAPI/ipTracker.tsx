@@ -6,6 +6,11 @@ export async function ipTracker() {
     baseURL:
       "https://geo.ipify.org/api/v1?apiKey=at_Yxxqxxi7C1mlbPE0ES2cMk9ceDDIt&ipAddress=",
   });
-  const data = await ipAdressApi.get(`&ipAddress=${ip}`);
+  const data = await ipAdressApi
+    .get(`&ipAddress=${ip}`)
+    .then((r) => r.data)
+    .catch((err) => {
+      alert("Invalid ip, try again");
+    });
   console.log(data);
 }
