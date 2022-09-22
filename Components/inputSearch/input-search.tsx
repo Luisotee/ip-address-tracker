@@ -1,11 +1,19 @@
 import { Button, Group, Image, TextInput } from "@mantine/core";
-import { GroupInput } from "./GroupInput";
+import { InputSearchProps } from "../../interface";
+import { ipTracker } from "../ipAPI/ipTracker";
+import { GroupInput } from "./input-style";
 
-export function InputSearch({ isMobile }: any) {
+export function InputSearch({
+  isMobile,
+  setInputValue,
+  inputValue,
+  resultProps,
+}: InputSearchProps) {
   const arrowButton = (
     <Button
       color="dark"
       radius={0}
+      onClick={() => ipTracker({ inputValue, resultProps })}
       style={{
         width: "100%",
         height: "100%",
@@ -13,7 +21,7 @@ export function InputSearch({ isMobile }: any) {
         borderTopRightRadius: "16px",
       }}
     >
-      <Image src="icon-arrow.svg" alt="arrow icon" />{" "}
+      <Image src="icon-arrow.svg" alt="arrow icon" />
     </Button>
   );
 
@@ -29,6 +37,7 @@ export function InputSearch({ isMobile }: any) {
         }
         rightSection={arrowButton}
         rightSectionWidth={57}
+        onChange={setInputValue}
         style={{ width: "100%" }}
       />
     </GroupInput>

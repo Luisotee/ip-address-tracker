@@ -24,6 +24,7 @@ export const MobileGridResult = styled(Stack)`
 
 export const StackBorder = styled(Stack)`
   border-left: 1px solid #eee;
+  gap: 0px;
   border @media (max-width: 1080px) {
   }
 `;

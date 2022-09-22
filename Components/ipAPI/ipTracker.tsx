@@ -1,7 +1,8 @@
 import axios from "axios";
+import { IpTrackerProps } from "../../interface";
 
-export async function ipTracker() {
-  const ip = "177.84.241.63";
+export async function ipTracker({ inputValue, resultProps }: IpTrackerProps) {
+  const ip = inputValue;
   const ipAdressApi = axios.create({
     baseURL:
       "https://geo.ipify.org/api/v1?apiKey=at_Yxxqxxi7C1mlbPE0ES2cMk9ceDDIt&ipAddress=",
@@ -13,4 +14,8 @@ export async function ipTracker() {
       alert("Invalid ip, try again");
     });
   console.log(data);
+  resultProps.setIp(data.ip);
+  resultProps.setLocation(data.location.city + ", " + data.location.region);
+  resultProps.setTimezone("UTC " + data.location.timezone);
+  resultProps.setIsp(data.isp);
 }

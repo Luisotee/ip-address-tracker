@@ -2,16 +2,13 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { icon } from "leaflet";
 import { MapDivContainer } from "./map-style";
-import { ipTracker } from "../ipAPI/ipTracker";
 
 export default function LiveMap() {
-  ipTracker();
   const customMarker = icon({
     iconUrl: "icon-location.svg",
     iconSize: [46, 56],
     iconAnchor: [32, 64],
   });
-
   return (
     <MapDivContainer>
       <MapContainer
