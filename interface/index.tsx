@@ -5,6 +5,7 @@ interface DataProps {
   setLocation: React.Dispatch<SetStateAction<string>>;
   setTimezone: React.Dispatch<SetStateAction<string>>;
   setIsp: React.Dispatch<SetStateAction<string>>;
+  setCoord: any;
 }
 
 interface resultCardProps {
@@ -12,9 +13,11 @@ interface resultCardProps {
   location: string;
   timezone: string;
   isp: string;
+  coord: any;
 }
 
 export interface IpTrackerProps {
+  resultCardProps: resultCardProps;
   inputValue: string;
   resultProps: DataProps;
 }
@@ -24,6 +27,7 @@ export interface InputSearchProps {
   setInputValue: any;
   inputValue: string;
   resultProps: DataProps;
+  resultCardProps: resultCardProps;
 }
 
 export interface ResultCardI {

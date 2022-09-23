@@ -8,12 +8,13 @@ export function InputSearch({
   setInputValue,
   inputValue,
   resultProps,
+  resultCardProps,
 }: InputSearchProps) {
   const arrowButton = (
     <Button
       color="dark"
       radius={0}
-      onClick={() => ipTracker({ inputValue, resultProps })}
+      onClick={() => ipTracker({ inputValue, resultProps, resultCardProps })}
       style={{
         width: "100%",
         height: "100%",
