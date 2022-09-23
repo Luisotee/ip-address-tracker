@@ -1,6 +1,5 @@
 import axios from "axios";
 import { IpTrackerProps } from "../../interface";
-import { NewLocation } from "./handle-new-location";
 
 export async function ipTracker({
   inputValue,

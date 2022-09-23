@@ -1,4 +1,4 @@
-import { SimpleGrid, Stack, Title } from "@mantine/core";
+import { Stack, Title } from "@mantine/core";
 import { useInputState, useMediaQuery } from "@mantine/hooks";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
