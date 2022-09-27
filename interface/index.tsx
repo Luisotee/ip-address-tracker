@@ -1,6 +1,6 @@
 import { SetStateAction } from "react";
 
-interface DataProps {
+export interface DataProps {
   setIp: React.Dispatch<SetStateAction<string>>;
   setLocation: React.Dispatch<SetStateAction<string>>;
   setTimezone: React.Dispatch<SetStateAction<string>>;
@@ -8,7 +8,7 @@ interface DataProps {
   setCoord: any;
 }
 
-interface resultCardProps {
+export interface resultCardProps {
   ip: string;
   location: string;
   timezone: string;

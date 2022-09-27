@@ -5,9 +5,8 @@ export async function getInitialIp() {
     .get("https://api.ipify.org?format=json")
     .then((r) => r.data)
     .catch((e) => {
-      e.errors = "Sorry, an adblocker issue occurred.";
+      alert("Sorry, an adblocker issue occurred.");
     });
 
-  //console.log(data.ip);
   return data.ip;
 }
