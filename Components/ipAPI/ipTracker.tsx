@@ -1,42 +1,32 @@
 import axios from "axios";
 import { useState } from "react";
 import { IpTrackerProps } from "../../interface";
+import { isDomain } from "./is-domain";
 
 export async function ipTracker({
   inputValue,
   resultProps,
   resultCardProps,
 }: IpTrackerProps) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  let isDomain = false;
-  if (inputValue == "") isDomain = false;
-  else if (
-    /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
-      inputValue
-    )
-  ) {
-    isDomain = false;
-  } else isDomain = true;
-
   const ip = inputValue;
   const ipAdressApi = axios.create({
     baseURL:
       "https://geo.ipify.org/api/v2/country,city?apiKey=at_Yxxqxxi7C1mlbPE0ES2cMk9ceDDIt&ipAddress=?domain=?",
   });
   let data;
-  if (isDomain) {
+  if (isDomain({ inputValue })) {
     data = await ipAdressApi
       .get(`&domain=${ip}`)
       .then((r) => r.data)
       .catch((err) => {
-        alert("dominio");
+        alert("Invalid input");
       });
   } else {
     data = await ipAdressApi
       .get(`&ipAddress=${ip}`)
       .then((r) => r.data)
       .catch((err) => {
-        alert("ip");
+        alert("Invalid input");
       });
   }
 
