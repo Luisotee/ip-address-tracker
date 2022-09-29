@@ -8,33 +8,26 @@ export async function ipTracker({
   resultProps,
   resultCardProps,
 }: IpTrackerProps) {
-  const ip = inputValue;
-  const ipAdressApi = axios.create({
-    baseURL:
-      "https://geo.ipify.org/api/v2/country,city?apiKey=at_Yxxqxxi7C1mlbPE0ES2cMk9ceDDIt&ipAddress=?domain=?",
-  });
-  let data;
-  if (isDomain({ inputValue })) {
-    data = await ipAdressApi
-      .get(`&domain=${ip}`)
-      .then((r) => r.data)
-      .catch((err) => {
-        alert("Invalid input");
-      });
-  } else {
-    data = await ipAdressApi
-      .get(`&ipAddress=${ip}`)
-      .then((r) => r.data)
-      .catch((err) => {
-        alert("Invalid input");
-      });
-  }
+  const baseURL =
+    "https://geo.ipify.org/api/v2/country,city?apiKey=" +
+    process.env.NEXT_PUBLIC_GET_API +
+    "&ipAddress=?domain=?&";
 
-  if (data) {
+  //console.log(process.env.NEXT_PUBLIC_GET_API);
+
+  try {
+    var res;
+    if (isDomain({ inputValue })) {
+      res = await fetch(baseURL + "domain=" + inputValue);
+    } else {
+      res = await fetch(baseURL + "ipAddress=" + inputValue);
+    }
+    const data = await res.json();
+    console.log(data);
     resultProps.setIp(data.ip);
     resultProps.setLocation(data.location.city + ", " + data.location.region);
     resultProps.setTimezone("UTC " + data.location.timezone);
     resultProps.setIsp(data.isp);
     resultProps.setCoord([data.location.lat, data.location.lng]);
-  }
+  } catch (error) {}
 }
