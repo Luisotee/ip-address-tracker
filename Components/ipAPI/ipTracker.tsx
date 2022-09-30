@@ -13,7 +13,7 @@ export async function ipTracker({
     process.env.NEXT_PUBLIC_GET_API +
     "&ipAddress=?domain=?&";
 
-  //console.log(process.env.NEXT_PUBLIC_GET_API);
+  //console.log(process.env.GET_API);
 
   try {
     var res;

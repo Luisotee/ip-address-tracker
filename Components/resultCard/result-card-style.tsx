@@ -7,24 +7,17 @@ export const DesktopGridResult = styled(SimpleGrid)`
   width: 1110px;
   height: 162px;
   z-index: 2;
-  border @media (max-width: 1080px) {
-  }
 `;
 
 export const MobileGridResult = styled(Stack)`
-  border-style: solid;
   background-color: white;
   border-radius: 15px;
   width: 351px;
   height: 320px;
   z-index: 2;
-  border @media (max-width: 1080px) {
-  }
 `;
 
 export const StackBorder = styled(Stack)`
   border-left: 1px solid #eee;
   gap: 0px;
-  border @media (max-width: 1080px) {
-  }
 `;

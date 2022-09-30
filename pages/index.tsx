@@ -41,13 +41,11 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    console.log("oi");
     async function initialIP() {
       const userIP = await getInitialIp();
       setInputValue(userIP);
       ipTracker({ inputValue, resultProps, resultCardProps });
     }
-
     initialIP();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
