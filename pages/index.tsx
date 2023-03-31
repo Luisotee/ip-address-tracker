@@ -42,10 +42,11 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     async function initialIP() {
-      const userIP = await getInitialIp();
+      const userIP: string = await getInitialIp();
       setInputValue(userIP);
-      ipTracker({ inputValue, resultProps, resultCardProps });
+      ipTracker({ inputValue: userIP, resultProps, resultCardProps });
     }
+
     initialIP();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -68,35 +69,5 @@ const Home: NextPage = () => {
     </Stack>
   );
 };
-
-/*async function getServerSideProps({
-  inputValue,
-  resultProps,
-  resultCardProps,
-}: IpTrackerProps) {
-  //console.log(process.env.GET_API);
-  const baseURL =
-    "https://geo.ipify.org/api/v2/country,city?apiKey=" +
-    process.env.GET_API +
-    "&ipAddress=?domain=?&";
-
-  try {
-    var res;
-    if (isDomain({ inputValue })) {
-      res = await fetch(baseURL + "domain=" + inputValue);
-    } else {
-      res = await fetch(baseURL + "ipAddress=" + inputValue);
-    }
-    const data = await res.json();
-    /*console.log(data);
-    resultProps.setIp(data.ip);
-    resultProps.setLocation(data.location.city + ", " + data.location.region);
-    resultProps.setTimezone("UTC " + data.location.timezone);
-    resultProps.setIsp(data.isp);
-    resultProps.setCoord([data.location.lat, data.location.lng]);
-  } catch (error) {}
-
-  return { props: { res: `res` } };
-}*/
 
 export default Home;

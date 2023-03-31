@@ -13,7 +13,7 @@ export const MobileGridResult = styled(Stack)`
   background-color: white;
   border-radius: 15px;
   width: 351px;
-  height: 320px;
+  height: 220px;
   z-index: 2;
 `;
 

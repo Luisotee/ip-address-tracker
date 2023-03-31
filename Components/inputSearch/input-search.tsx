@@ -32,9 +32,7 @@ export function InputSearch({
         size="xl"
         radius="lg"
         placeholder={
-          isMobile
-            ? "Search for any IP address or domain"
-            : "Search for any IP or domain"
+          isMobile ? "Search for any IP address " : "Search for any IP address"
         }
         rightSection={arrowButton}
         rightSectionWidth={57}
