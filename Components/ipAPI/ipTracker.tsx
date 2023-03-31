@@ -24,6 +24,6 @@ export async function ipTracker({
     resultProps.setLocation(data.city + ", " + data.regionName);
     resultProps.setTimezone("UTC " + data.timezone);
     resultProps.setIsp(data.isp);
-    resultProps.setCoord([data.location.lat, data.location.lng]);
+    resultProps.setCoord([data.lat, data.lon]);
   } catch (error) {}
 }
