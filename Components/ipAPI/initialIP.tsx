@@ -1,12 +1,13 @@
 export async function getInitialIp() {
   const baseURL = "https://api.ipify.org?format=json";
-  var data;
+  let data; // Set a default value for data
 
   try {
     const res = await fetch(baseURL);
     data = await res.json();
-    console.log(data);
-  } catch (error) {}
+  } catch (error) {
+    console.log("Error:", error);
+  }
 
   return data.ip;
 }
