@@ -1,10 +1,6 @@
-## Live demo with Vercel
+## Note
 
-Take a look at this project at: https://ip-address-tracker-o418.vercel.app/
-
-NOTE: Disable ADBLOCK and allow insecure content in chrome, tutorial in 2nd answer https://stackoverflow.com/questions/37387711/page-loaded-over-https-but-requested-an-insecure-xmlhttprequest-endpoint
-
-This is only needed when trying to see it in vercel, if you load it locally it's not needed.
+Due to API limits this will only work in http, not in https
 
 ## Getting Started
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
